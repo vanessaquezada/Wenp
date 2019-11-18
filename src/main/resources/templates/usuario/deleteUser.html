@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:include="layouts/layout::plantilla">
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width"/>
+
+    <title>Usuario</title>
+</head>
+<body th:fragment="content">
+
+	<div class="box-form" style="background-color:white;">
+	<div class="container ">
+		<div>		
+			<form class="contact100-form validate-form" action="@{'/usuarios/eliminar/' + ${i.id_usuario}}" method="post">
+				<span class="contact100-form-title">
+					ELIMINAR USUARIO
+				</span>
+				
+				<input type="hidden" name="id_usuario" th:value="${id_usuario}">
+             <div class='p-3 mb-2 bg-info text-white col-8 offset-2 text-center' role='alert' id='alerta' style="border-radius: 10px">
+                <h3 th:text="|¿Desea eliminar el registro ${id_usuario} de la tabla usuarios?|"></h3>
+            </div>
+                <div style="margin-left: auto; margin-right: auto;">
+                <a class="btn btn-outline-primary" href="/usuarios/index" role="button" id="aceptar">Cancelar</a>				
+				</div>
+				<div style="margin-left: auto; margin-right: auto;">
+				<button  type="submit" class="btn btn-outline-danger" value="Guardar" id="cancelar" >Eliminar</button>
+			</div>
+           </form>
+		</div>
+		</div>
+    </div>
+</body>
+</html>

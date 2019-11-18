@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org"  th:fragment="plantilla">
+
+<head th:include="/components/styleA::stylA">
+  <div th:include="/components/styleD::estylD"></div>
+		  <meta charset="utf-8">
+		  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  		<!-- estlo carrusel -->
+</head>
+
+<body id="page-top">
+
+  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+    <a class="navbar-brand mr-1" href="index.html" id="name">WENP GRADES</a>
+    
+
+    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+      <i class="fas fa-bars"></i>
+    </button>
+
+      <!-- Navbar Search -->
+    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+      <div class="input-group">
+        </div>
+    </form>
+
+    <!--Notificaciones y Perfil de Usuario-->
+    <ul class="navbar-nav ml-auto ml-md-0">
+       <!--Perfil-->
+      <li class="nav-item dropdown no-arrow">
+        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user-circle fa-fw"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+          <a class="dropdown-item" href="#">Configuraciones</a>
+          <a class="dropdown-item" href="#">Recuperar contraseña</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Salir</a>
+        </div>
+      </li>
+    </ul>
+
+  </nav>
+
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="sidebar navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/ingresar/inicio">
+          <i class="fas fa-fw fa-jedi"></i>
+          <span>Vista General</span>
+        </a>
+      </li>
+  		<!-- ******************************************************************************************* -->
+       <li class="nav-item">
+        <a class="nav-link" href="/general/listar">
+          <i class="fas fa-table fa-table"></i>
+          <span>Tabla General</span></a>
+      </li>
+         <!-- ******************************************************************************************* -->
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-user-circle"></i>
+          <span>Usuarios</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <h6 class="dropdown-header">Sesión:</h6>
+          <a class="dropdown-item" href="/usuarios/guardar">Nuevo usuario</a>
+          <a class="dropdown-item" href="/usuarios/index">Usuarios</a>
+          <div class="dropdown-divider"></div>
+        </div>
+       </li>
+       	<!--************************************************************************************************-->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-book-open"></i>
+          <span>Materias</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <h6 class="dropdown-header">Acción:</h6>
+          <a class="dropdown-item" href="/materias/guardar">Nueva Materia</a>
+          <a class="dropdown-item" href="/materias/index">Materias</a>
+          <div class="dropdown-divider"></div>
+        </div>
+       </li>
+          <!-- ******************************************************************************************* -->
+	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          <i class="fas fa-fw fa-clipboard-check"></i>
+	          <span>Actividades</span>
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+	          <h6 class="dropdown-header">Acción:</h6>
+	          <a class="dropdown-item" href="/actividades/guardar">Nueva Actividad</a>
+	          <a class="dropdown-item" href="/actividades/index">Actividades</a>
+	          <div class="dropdown-divider"></div>
+	        </div>
+	      </li>
+       		 <!-- ******************************************************************************************* -->
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-folder-open"></i>
+          <span>Calificaciones</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <h6 class="dropdown-header">Acción:</h6>
+          <a class="dropdown-item" href="/notas/guardar">Nueva Calificación</a>
+          <a class="dropdown-item" href="/notas/index">Calificaciones</a>
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
+       <!-- ******************************************************************************************* -->
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-graduation-cap"></i>
+          <span>Estudiantes</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <h6 class="dropdown-header">Acción:</h6>
+          <a class="dropdown-item" href="/estudiantes/guardar">Agregar Nuevo</a>
+          <a class="dropdown-item" href="/estudiantes/index">Estudiantes</a>
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
+       <!-- ******************************************************************************************* -->
+	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          <i class="fas fa-fw fa-building"></i>
+	          <span>Institución</span>
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+	          <h6 class="dropdown-header">Acción:</h6>
+	          <a class="dropdown-item" href="/instituciones/guardar">Nueva institución</a>
+	          <a class="dropdown-item" href="/instituciones/index">Instituciones</a>
+	          <div class="dropdown-divider"></div>
+	        </div>
+	      </li>
+	   <!-- ******************************************************************************************* -->
+         <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-users"></i>
+          <span>Grupos</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <h6 class="dropdown-header">Acción:</h6>
+          <a class="dropdown-item" href="/grupos/guardar">Nuevo Grupo</a>
+          <a class="dropdown-item" href="/grupos/index">Grupos</a>
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
+      <!-- ******************************************************************************************* -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-users"></i>
+          <span>Grupos</span>
+           <span>Estudiantes</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <h6 class="dropdown-header">Acción:</h6>
+          <a class="dropdown-item" href="/grupoestudiantes/guardar">Nuevo Grupo Estudiante</a>
+          <a class="dropdown-item" href="/grupoestudiantes/index">Grupos Estudiantes</a>
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
+      <!-- ******************************************************************************************* -->
+     
+       <li class="nav-item">
+        <a class="nav-link" href="/components/ayuda">
+          <i class="fas fa-fw fa-question-circle"></i>
+          <span>Ayuda</span></a>
+      </li>
+         <!-- ******************************************************************************************* -->
+     
+       <li class="nav-item">
+        <a class="nav-link" href="/ingresar/detalle">
+          <i class="fas fa-fw fa-question-circle"></i>
+          <span>¿Quienes somos?</span></a>
+      </li>
+    </ul>
+     
+    <div id="content-wrapper">
+
+      <div class="container-fluid">
+
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="#">WENP GRADES </a>
+          </li>
+          <li class="breadcrumb-item active">Vista general</li>
+        </ol>
+
+  <!-- /#wrapper -->
+		 <!-- Content -->
+         <div th:include="this::content"></div>
+    
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">¿Está seguro de querer salir?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body"> Seleccione "Salir" a continuación si usted está listo para finalizar su sesión actual.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+          <a class="btn btn-primary" th:href="@{/logout}" type="submit">Salir</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+      <!-- Footer -->
+  <!-- Bootstrap core JavaScript-->
+  <script src="../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Page level plugin JavaScript-->
+<!--   <script src="../../vendor/chart.js/Chart.min.js"></script> -->
+  <script src="../../vendor/datatables/jquery.dataTables.js"></script>
+  <script src="../../vendor/datatables/dataTables.bootstrap4.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="../../js/sb-admin.min.js"></script>
+
+  <!-- Demo scripts for this page-->
+  <script src="../../js/demo/datatables-demo.js"></script>
+<!--   <script src="../../js/demo/chart-area-demo.js"></script> -->
+
+ <!-- Demo scripts for this page-->
+  <script th:src="@{/jsAjax/general.js}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org"
+      th:include="layouts/layout::plantilla">
+<head>
+
+</head>
+
+<body id="page-top" style="background-image:url('../asset/images/onda.jpg')">
+  <!-- DataTables Example -->
+    <div th:fragment="content">
+    <div class="card mb-3">
+    <div class="card-header">
+      <i class="fas fa-table"></i>
+      Tabla de Datos/ Roles 
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered" id="dataTable">
+          <thead  style="background-color: #03729B">
+            <tr id="color1">
+            
+            
+                <th>IdRol</th>
+                <th>Rol</th>
+                <th><button id="color1" type="button" class="btn btn-outline-success">Agreagar</button></th>
+            </tr>
+          </thead>
+          <tfoot  style="background-color: #03729B">
+            <tr  id="color1">
+              <th>IdRol</th>
+              <th>Rol</th>
+                <th><button id="color1" type="button" class="btn btn-outline-success">Agreagar</button></th>
+            </tr>
+          </tfoot>
+          <tbody>
+          <tr>
+                <td>1</td>
+                <td>1</td>
+                <th><button type="button" class="btn btn-outline-primary">Editar</button> <button type="button" class="btn btn-outline-danger">Eliminar</button></th>
+              </tr>
+            </tbody>
+            </table>
+          </div>
+         </div>
+        </div>
+       </div>
+       </div>
+    </body>
+    </html>

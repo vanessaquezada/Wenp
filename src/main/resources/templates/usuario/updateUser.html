@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" th:include="layouts/layout::plantilla">
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width"/>
+
+    <title>Usuario</title>
+</head>
+<body th:fragment="content">
+
+	<div class="box-form" style="background-color:white;">
+	<div class="container ">
+		<div>
+			<form class="contact100-form validate-form" action="/usuarios/modificar" method="post">
+				<span class="contact100-form-title">
+					MODIFICAR USUARIO
+				</span>
+				<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+				<div>
+					<input th:value="${item.id_usuario}" id="id_usuario" class="input100" type="hidden" name="id_usuario">
+					<span class="focus-input100"></span>
+                </div>
+				<label class="label-input100" for="id_rol">Rol:</label>
+				<div class="wrap-input100 rs1 validate-input">
+					<select name="rol" id="rol" class="form-control">
+						<div th:each="r:${roles}">
+                            <option th:if="${r.id_rol==item.rol.id_rol}" selected th:value="${r.id_rol}" th:text="${r.rol}"></option>
+                        	<option th:if="${r.id_rol!=item.rol.id_rol}"   th:value="${r.id_rol}" th:text="${r.rol}"></option>
+                        </div>
+                    </select>
+					<span class="focus-input100"></span>
+                </div>
+				<label class="label-input100" for="nombre">Nombre:</label>
+				<div class="wrap-input100 rs1 validate-input">
+					<input th:value="${item.nombre}" id="nombre" class="input100" type="text" name="nombre" placeholder="Digitar nombre">
+					<span class="focus-input100"></span>
+                </div>
+                <label class="label-input100" for="apellido">Apellido:</label>
+				<div class="wrap-input100 rs1 validate-input">
+					<input th:value="${item.apellido}" id="apellido" class="input100" type="text" name="apellido" placeholder="Digitar apellido">
+					<span class="focus-input100"></span>
+                </div>
+                
+                <label class="label-input100" for="usuario">Usuario:</label>
+				<div class="wrap-input100 rs1 validate-input">
+					<input th:value="${item.usuario}" id="usuario" class="input100" type="email" name="usuario" placeholder="Digitar usuario">
+					<span class="focus-input100"></span>
+                </div>
+				<div>
+					<input th:value="${item.password}" id="password" class="input100" type="hidden" name="password" placeholder="Digitar contraseña">
+					<span class="focus-input100"></span>
+                </div>
+				
+                <div style="margin-left: auto; margin-right: auto;">        
+				<div class="col-md-6 col-sm-6 col-xs-6 pad-adjust">		
+				<button  class="btn btn-info">Modificar</button>
+				</div>
+				</div>    
+					<div style="margin-left: auto; margin-right: auto;"> 
+				<div  class="col-md-6 col-sm-6 col-xs-6 pad-adjust">
+				<a  class="btn btn-danger" href="/usuarios/index">Cancelar</a>
+				</div>
+				</div>             						
+			</form>
+		</div>
+	</div>
+	</div>
+	    <style>
+    body {overflow-y:hidden;}
+    </style>
+   	<style>
+    body {overflow-x:hidden;}
+    </style>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- implementacion de la plantilla -->
+<html xmlns:th="http://www.thymeleaf.org" th:include="layouts/layout::plantilla">
+      <!--th:include="layouts/layout::plantilla"-->
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width"/>
+
+    <title>Grupo</title>
+</head>
+<body th:fragment="content">
+
+	<div class="box-form" style="background-color:white;">
+	<div class="container ">
+			<form class="contact100-form validate-form" action="/grupos/guardar" method="post">
+				<span class="contact100-form-title">
+					AGREGAR GRUPO
+				</span>
+				<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+				<label class="label-input100" for="id_materia">Materia:</label>
+				<div class="wrap-input100 rs1 validate-input">
+					<select name="materia" id="materia" class="form-control">
+                            <option th:each="m:${materias}" th:value="${m.id_materia}" th:text="${m.nombre}"></option>
+                        </select>
+					<span class="focus-input100"></span>
+                </div>
+				<label class="label-input100" for="grupo">Grupo:</label>
+				<div class="wrap-input100 rs1 validate-input">
+					<input id="grupo" class="input100" type="text" name="grupo" placeholder="Digitar grupo">
+					<span class="focus-input100"></span>
+				</div>
+				
+				 
+                <div style="margin-left: auto; margin-right: auto;">        
+				<div class="col-md-6 col-sm-6 col-xs-6 pad-adjust">		
+				<button  class="btn btn-info">Guardar</button>
+				</div>	
+				</div>	
+				
+				<div style="margin-left: auto; margin-right: auto;"> 
+				<div  class="col-md-6 col-sm-6 col-xs-6 pad-adjust">
+				<a  class="btn btn-danger btn-md" href="/grupos/index">Cancelar</a>
+				</div>
+				</div>	
+							
+			</form>
+		</div>
+	</div>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- implementacion de la plantilla -->
+<html xmlns:th="http://www.thymeleaf.org" 
+      th:include="layouts/layout::plantilla">
+<head>
+    <meta charset="ISO-8859-1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo</title>
+</head>
+	<body  th:fragment="content" class="container">
+     <div class="card mb-3">
+    <div class="card-header">
+      <i class="fas fa-table"></i>
+      Tabla de Datos/ Grupos   <a class="btn btn-info btn-lg" th:href="@{/grupos/guardar}" role="button" id="nuevo">Nuevo</a>
+            </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-hover table-striped table-bordered" id="dataTable">
+          <thead  style="background-color: #03729B">
+            <tr id="color1">
+               <th>Id</th>
+                <th>Materia</th>
+                <th>Grupo</th>
+               <th style="width:180px">Opciones</th>
+
+			  </tr>
+          </thead>
+
+           <tbody>
+           <!-- Estructira repetitiva para recorrer el listado que viene en
+		variable 'items', esta el el foreach -->
+			<tr th:each="i : ${items}">
+				<td th:text="${i.id_grupo}"></td>
+				<td th:text="${i.materia.nombre}"></td>
+				<td th:text="${i.grupo}"></td>
+				<td> <a name="modificar" id="modificar" class="btn btn-success" th:href="@{'/grupos/modificar/' + ${i.id_grupo}}" role="button">Modificar</a>
+				     <a name="eliminar" id="eliminar" class="btn btn-danger" th:href="@{'/grupos/eliminar/' + ${i.id_grupo}}"  role="button">Eliminar</a></td>
+			</tr>
+        </tbody>
+           
+          </table>
+          </div>
+          </div>
+        </div>	
+</body>
+</body>
+</html>

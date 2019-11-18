@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+      th:include="layouts/layout::plantilla">
+<head>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+	 <body class="container">
+
+  <!-- DataTables Example -->
+  	<div  th:fragment="content">
+    <div class="card mb-3">
+    <div class="card-header">Tabla de Datos/ Usuario <a class="btn btn-info btn-lg" th:href="@{/usuarios/guardar}" role="button" id="nuevo">Nuevo</a>
+      </div>
+      <div class="card-body">
+      
+        <div class="table-responsive">
+          <table class="table table-hover table-striped table-bordered" id="dataTable">
+          <thead  style="background-color: #03729B">
+            <tr id="color1">
+                <th>Id</th>
+                <th>Rol</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Usuario</th>
+                <th style="width:180px">Opciones</th>
+            </tr>
+          </thead>
+			<tbody>
+           <!-- Estructira repetitiva para recorrer el listado que viene en
+		variable 'items', esta el el foreach -->
+			<tr th:each="i : ${items}">
+				<td th:text="${i.id_usuario}"></td>
+				<td th:text="${i.rol.rol}"></td>
+				<td th:text="${i.nombre}"></td>
+				<td th:text="${i.apellido}"></td>
+				<td th:text="${i.usuario}"></td>
+				<td> <a name="modificar" id="modificar" class="btn btn-success" th:href="@{'/usuarios/modificar/' + ${i.id_usuario}}" role="button">Modificar</a>
+				     <a name="eliminar" id="eliminar" class="btn btn-danger" th:href="@{'/usuarios/eliminar/' + ${i.id_usuario}}"  role="button">Eliminar</a></td>
+			</tr>
+        </tbody>
+          </table>
+          </div>
+          </div>
+        </div>	
+        </div>
+</body>
+</html>

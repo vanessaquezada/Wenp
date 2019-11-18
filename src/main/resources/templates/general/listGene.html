@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+      th:include="layouts/layout::plantilla">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+	 <body class="container">
+
+  <!-- DataTables Example -->
+  	<div  th:fragment="content">
+    <div class="card mb-3">
+    <div class="card-header">
+      <i class="fas fa-table"></i>
+      Tabla de Datos/ General 
+      <br>
+      <!--  Materia -->
+      <label>Materia:</label>
+	      <select name="materia" id="materia" required>
+	      <div th:each="m:${materias}">
+          <option  selected th:value="${m.nombre}" th:text="${m.nombre}"></option>
+       
+          </div>
+	      </select>
+        <!--  Grupo -->
+        <label>Grupo:</label>
+         <select name="grupo" id="grupo" required>
+         <div th:each="g:${grupos}">
+         <option  selected th:value="${g.grupo}" th:text="${g.grupo}"></option>       
+         </div>
+	      </select>
+  
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-hover table-striped table-bordered" id="dataTable">
+          <thead  style="background-color: #03729B">
+            <tr id="color1">
+                <th>Estudiante</th>
+                <th>Actividades</th>
+                <th>Nota Promedio</th>
+            </tr>
+          </thead>
+
+           <tbody id="tdatos">
+        
+      	  </tbody>
+          </table>
+          </div>
+          </div>
+        </div>	
+        </div>
+        </div>
+        
+     
+</body>
+</html>

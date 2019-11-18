@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:include="layouts/layout::plantilla">
+<head>
+</head>
+<body>
+
+	<!-- DataTables Example -->
+	<div th:fragment="content">
+		<div class="card mb-3">
+			<div class="card-header">Tabla de Datos/ Materias <a class="btn btn-info btn-lg" th:href="@{/materias/guardar}" role="button" id="nuevo">Nuevo</a>
+			</div>
+			<div class="card-body" style="">
+			
+				<div class="table-responsive">
+						<table class="table table-hover table-striped table-bordered" id="dataTable">						
+						<thead style="background-color: #03729B">
+							<tr id="color1">
+								<th>Id</th>
+								<th>Nombre</th>
+								<th>Descripcion</th>
+								<th>Especialidad</th>
+								<th style="width:180px">Opciones</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="i:${items}">
+								<td th:text=${i.id_materia}></td>
+								<td th:text=${i.nombre}></td>
+								<td th:text=${i.descripcion}></td>
+								<td th:text=${i.especialidad}></td>
+								<td><a name="modificar" id="modificar" class="btn btn-success" th:href="@{'/materias/modificar/' + ${i.id_materia}}" role="button">Modificar</a>
+								    <a name="eliminar" id="eliminar" class="btn btn-danger" th:href="@{'/materias/eliminar/' + ${i.id_materia}}" role="button">Eliminar</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="components/styleA::stylA">
+	<title>Roles</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" action="/rol/roles" method="post">
+				<span class="contact100-form-title">
+					AGREGAR ROL
+				</span>
+
+				<label class="label-input100" for="rol">Rol:</label>
+				<div class="wrap-input100 rs1 validate-input">
+					<input id="rol" class="input100" type="text" name="rol" placeholder="Digitar rol">
+					<span class="focus-input100"></span>
+				</div>
+
+				<button  type="button" class="btn btn-outline-success" id="aceptar">Aceptar</button>
+                <button  type="button" class="btn btn-outline-danger" id="cancelar">Cancelar</button>
+				
+							
+			</form>
+		</div>
+	</div>
+
+
+
+<!--===============================================================================================-->
+	<script src="../add/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../add/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../add/vendor/bootstrap/js/popper.js"></script>
+	<script src="../add/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../add/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../add/vendor/daterangepicker/moment.min.js"></script>
+	<script src="../add/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="../add/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="../add/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+</body>
+</html>

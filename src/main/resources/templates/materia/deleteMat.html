@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:include="layouts/layout::plantilla">
+
+  <head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width"/>
+
+    <title>Materia</title>
+</head>
+<body th:fragment="content">
+
+	<div class="box-form" style="background-color:white;">
+	<div class="container">
+		<div>
+			<form class="contact100-form validate-form" action="@{'/materias/eliminar/' + ${i.id_materia}}" method="post">
+				<span class="contact100-form-title">
+					ELIMINAR MATERIA
+				</span>
+				
+				<input type="hidden" name="idCliente" th:value="${idCliente}">
+                <div class='p-3 mb-2 bg-info text-white col-8 offset-2 text-center' role='alert' id='alerta' style="border-radius: 10px">
+                <h3 th:text="|¿Desea eliminar ${nombreCliente} ${apellidoCliente} de Materia:?|"></h3>
+                </div>
+            
+            
+              <div style="margin-left: auto; margin-right: auto;"> 
+				<div  class="col-md-6 col-sm-6 col-xs-6 pad-adjust">
+				<a  class="btn btn-primary" href="/materias/index">Cancelar</a>
+				</div>
+				</div>
+             <div style="margin-left: auto; margin-right: auto;">        
+				<div class="col-md-6 col-sm-6 col-xs-6 pad-adjust">		
+				<button  class="btn btn-danger">Eliminar</button>
+				</div>
+				</div>
+           </form>
+		</div>
+		</div>
+    </div>
+</body>
+</html>
